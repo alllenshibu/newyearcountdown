@@ -47,7 +47,8 @@ function still2019() {
 }
 
 function its2020() {
-    document.getElementById('time').innerHTML = "Happy New Year";
+    document.getElementById('time').innerHTML = "I close my eyes to old ends. And open my heart to new beginnings. - Nick Federickson.";
+    document.getElementById('time-to-end').innerHTML = "Happy New Year";
 }
 function correctZero(i) {
     if (i < 10) { i = "0" + i };
