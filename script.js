@@ -64,8 +64,9 @@ function getLon() {
     nowNewYear = Math.floor(nowNewYear / 60);
     nowNewYear = Math.floor(nowNewYear / 4);
     nowNewYear = Math.floor(nowNewYear );
-    if( nowNewYear < -180 ) {
-        nowNewYear = 360 + nowNewYear;
+    nowNewYear = 360 - nowNewYear;
+    if( nowNewYear > 180 ) {
+        nowNewYear = nowNewYear - 360;
     }
     console.log("current new year" + nowNewYear);
     return nowNewYear;
