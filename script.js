@@ -1,11 +1,7 @@
 var countDownDate = new Date("Jan 1, 2020 00:00:00").getTime();
-console.log( new Date( countDownDate ) );
 var now = new Date();
 var timezoneOffset = now.getTimezoneOffset() * 60000;
 var nowGMT = new Date(now.getTime() + timezoneOffset);
-console.log(now);
-console.log(timezoneOffset);
-console.log(nowGMT);
 var lon = 0;
 
 function init() {
@@ -43,6 +39,10 @@ function still2019() {
     document.getElementById('time-to-end').innerHTML = d + ":" + h + ":" + m + ":" + s;
 
 }
+
+function its2020() {
+    document.getElementById( 'time-to-end').innerHTML = "Happy New Year";
+}
 function correctZero(i) {
     if (i < 10) { i = "0" + i };
     return i;
@@ -50,7 +50,7 @@ function correctZero(i) {
 
 
 function startAnimation() {
-    var options = { zooming: false, center: [0, getLon()], zoom: 0 };
+    var options = { zooming: true, center: [0, getLon()], zoom: 0 };
     var earth = new WE.map('earth', options);
     WE.tileLayer('http://tileserver.maptiler.com/nasa/{z}/{x}/{y}.jpg', {
         minZoom: 0,
@@ -63,14 +63,14 @@ function startAnimation() {
 }
 
 function getLon() {
-    console.log( new Date( now)  );
-    console.log(new Date( nowGMT)  );
     var nowNewYear = Math.floor( countDownDate - nowGMT ) ;
     nowNewYear = Math.floor(nowNewYear / 1000);
     nowNewYear = Math.floor(nowNewYear / 60);
-    console.log( nowNewYear);
     nowNewYear = Math.floor(nowNewYear / 4);
-    console.log( nowNewYear);
+    nowNewYear = nowNewYear - 20;
     console.log("current new year" + nowNewYear);
+    if( nowNewYear < -180 ) {
+        nowNewYear = 360  + nowNewYear;
+    }
     return nowNewYear;
 }

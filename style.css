@@ -31,6 +31,13 @@ body{
     padding-bottom: 2vh;
     align-content: initial;
 }
+#left, #right {
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    padding-top: 5px;
+    padding-bottom: 5px;;
+}
 
 .pin {
     color: white;
