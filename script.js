@@ -73,7 +73,7 @@ function getLon() {
     nowNewYear = Math.floor(nowNewYear / 1000);
     nowNewYear = Math.floor(nowNewYear / 60);
     nowNewYear = Math.floor(nowNewYear / 4);
-    nowNewYear = nowNewYear - 20;
+    nowNewYear = nowNewYear;
     console.log("current new year" + nowNewYear);
     if (nowNewYear < -180) {
         nowNewYear = 360 + nowNewYear;
