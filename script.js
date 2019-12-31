@@ -31,12 +31,15 @@ function still2019() {
     var now = new Date();
     var distance = countDownDate - now;
 
+    var d = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60 * 24));
     var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var s = Math.floor((distance % (1000 * 60)) / 1000);
+    d = correctZero(d);
+    h = correctZero(h);
     m = correctZero(m);
     s = correctZero(s);
-    document.getElementById('time-to-end').innerHTML = h + ":" + m + ":" + s;
+    document.getElementById('time-to-end').innerHTML = d + ":" + h + ":" + m + ":" + s;
 
 }
 function correctZero(i) {
@@ -59,14 +62,17 @@ function startAnimation() {
 }
 
 function getLon() {
-    var nowNewYear = Math.floor(nowGMT - countDownDate);
+    console.log( new Date( now)  );
+    console.log(new Date( nowGMT)  );
+    var nowNewYear = Math.floor( countDownDate - now);
+    console.log( nowNewYear);
     nowNewYear = Math.floor(nowNewYear / 1000);
     nowNewYear = Math.floor(nowNewYear / 60);
     nowNewYear = Math.floor(nowNewYear / 4);
-    nowNewYear = Math.floor(nowNewYear );
-    nowNewYear = 360 - nowNewYear;
+    console.log( nowNewYear);
+    nowNewYear = 180 + nowNewYear;
     if( nowNewYear > 180 ) {
-        nowNewYear = nowNewYear - 360;
+        nowNewYear = -180 - nowNewYear;
     }
     console.log("current new year" + nowNewYear);
     return nowNewYear;
