@@ -57,7 +57,7 @@ function correctZero(i) {
 
 
 function startAnimation() {
-    var options = { sky: true, zooming: true, center: [0, getLon()], zoom: 0 };
+    var options = { zooming: true, center: [0, getLon()], zoom: 0 };
     var earth = new WE.map('earth', options);
     WE.tileLayer('http://tileserver.maptiler.com/nasa/{z}/{x}/{y}.jpg', {
         minZoom: 0,
