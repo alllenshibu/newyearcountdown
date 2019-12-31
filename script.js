@@ -47,7 +47,7 @@ function still2019() {
 }
 
 function its2020() {
-    document.getElementById('time').innerHTML = "I close my eyes to old ends. And open my heart to new beginnings.";
+    document.getElementById('time').innerHTML = "Close your eyes to old ends. And open your heart to new beginnings.";
     document.getElementById('time-to-end').innerHTML = "Happy New Year";
 }
 function correctZero(i) {
