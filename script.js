@@ -1,4 +1,5 @@
 var countDownDate = new Date("Jan 1, 2020 00:00:00").getTime();
+console.log( new Date( countDownDate ) );
 var now = new Date();
 var timezoneOffset = now.getTimezoneOffset() * 60000;
 var nowGMT = new Date(now.getTime() + timezoneOffset);
@@ -64,16 +65,12 @@ function startAnimation() {
 function getLon() {
     console.log( new Date( now)  );
     console.log(new Date( nowGMT)  );
-    var nowNewYear = Math.floor( countDownDate - now);
-    console.log( nowNewYear);
+    var nowNewYear = Math.floor( countDownDate - nowGMT ) ;
     nowNewYear = Math.floor(nowNewYear / 1000);
     nowNewYear = Math.floor(nowNewYear / 60);
+    console.log( nowNewYear);
     nowNewYear = Math.floor(nowNewYear / 4);
     console.log( nowNewYear);
-    nowNewYear = 180 + nowNewYear;
-    if( nowNewYear > 180 ) {
-        nowNewYear = -180 - nowNewYear;
-    }
     console.log("current new year" + nowNewYear);
     return nowNewYear;
 }
