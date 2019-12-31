@@ -3,7 +3,7 @@
     margin: 0;
 }
 
-body{
+body {
     font-family: 'Inconsolata', monospace;
     background-color: black;
     background-repeat: no-repeat;
@@ -12,7 +12,7 @@ body{
     color: white;
 }
 
-#time, #time-to-end{
+#time, #time-to-end {
     margin-left: auto;
     margin-right: auto;
     padding-top: 5px;
@@ -24,6 +24,7 @@ body{
 #newyearvisual p {
     padding-top: 2vh;
     text-align: center;
+    position: relative;
 }
 
 #newyearvisual {
@@ -31,20 +32,22 @@ body{
     padding-bottom: 2vh;
     align-content: initial;
 }
+
 #left, #right {
     width: 50%;
     float: left;
     overflow: hidden;
     padding-top: 5px;
-    padding-bottom: 5px;;
+    padding-bottom: 5px;
+}
+
+#earth {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
 }
 
 .pin {
     color: white;
     text-align: center;
 }
-
-@media only screen and (max-width: 768px) {
-    #earth {
-    }
-  }

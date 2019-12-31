@@ -57,7 +57,7 @@ function correctZero(i) {
 
 
 function startAnimation() {
-    var options = { zooming: true, center: [0, getLon()], zoom: 0 };
+    var options = { sky: true, zooming: true, center: [0, getLon()], zoom: 0 };
     var earth = new WE.map('earth', options);
     WE.tileLayer('http://tileserver.maptiler.com/nasa/{z}/{x}/{y}.jpg', {
         minZoom: 0,
@@ -75,7 +75,7 @@ function getLon() {
     nowNewYear = Math.floor(nowNewYear / 60);
     nowNewYear = Math.floor(nowNewYear / 4);
     nowNewYear = nowNewYear;
-    console.log("current new year" + nowNewYear);
+    console.log("new year is at" + nowNewYear);
     if (nowNewYear < -180) {
         nowNewYear = 360 + nowNewYear;
     }
